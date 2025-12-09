@@ -2,6 +2,7 @@ import Fastify, { FastifyRequest } from "fastify";
 import FastifyStatic from "@fastify/static";
 
 import path from "node:path";
+import os from "node:os";
 
 const fastify = Fastify({
   logger: true
@@ -22,7 +23,7 @@ const htmlTemplate = (request: FastifyRequest) => `
       <p><img src="/public/zt-logo.svg"></p>
     </section>
     <section>
-      <h1>Hello, ${request.ip}
+      <h1>Hello, ${request.ip}! My name is ${os.hostname()}.</h1>
     </section>
   </div>
 </body>
