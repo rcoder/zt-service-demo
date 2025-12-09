@@ -1,0 +1,11 @@
+services:
+  demo-service:
+    build: .
+    ports:
+      - 8000:3000
+    networks:
+      - host
+
+networks:
+  host:
+    driver: bridge
